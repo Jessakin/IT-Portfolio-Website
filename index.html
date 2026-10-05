@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+		<title>Jessica Buhler | IT Professional Portfolio</title>
+		<link href="https://fonts.googleapis.com/css2?family=Laila:wght@500;700;600&family=Newsreader:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+		<style>
+			:root{
+				--bg:#F3F5F2;
+				--surface:#FFFFFF;
+				--ink:#14262B;
+				--muted:#4C5F63;
+				--accent:#1F6F6B;
+				--mark:#a1dab0;
+				--line:#CBD5D2;
+				box-sizing:border-box;
+				padding-top:env(safe-area-inset-top,0px);
+				padding-bottom:env(safe-area-inset-bottom,0px)
+			}
+			
+			@media(prefers-color-scheme:dark){
+				:root:not([data-theme="light"]){
+					--bg:#0F1B1E;
+					--surface:#16272B;
+					--ink:#E8F0EE;
+					--muted:#9DB2B0;
+					--accent:#5FC2B9;
+					--line:#2A3F43}
+			}
+			
+			:root[data-theme="dark"]{
+				--bg:#0F1B1E;
+				--surface:#16272B;
+				--ink:#E8F0EE;
+				--muted:#9DB2B0;
+				--accent:#5FC2B9;
+				--line:#2A3F43
+			}
+			
+			html{
+				scroll-padding-top:env(safe-area-inset-top,0px);
+				scroll-behavior:smooth
+			}
+			
+			*{ box-sizing:border-box}
+			
+			body{
+				margin:0;
+				background:var(--bg);
+				color:var(--ink);
+				font:1.125rem/1.65 Newsreader,Georgia,serif
+			}
+			
+			h1,h2,h3,.sans{font-family:"Arial",
+				"Helvetica Neue",
+				Arial,sans-serif;
+				line-height:1.1;
+				margin:0}
+			
+			a{color:var(--accent)}
+			
+			:focus-visible{outline:3px solid var(--mark);outline-offset:3px}
+			.wrap{max-width:68rem;margin:0 auto;padding:0 1.25rem}
+			header.nav{position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);border-bottom:1px solid var(--line);z-index:5}
+			.nav .wrap{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding-top:.7rem;padding-bottom:.7rem;flex-wrap:wrap}
+			.nav b{font-family:"Bricolage Grotesque",sans-serif}
+			.nav ul{display:flex;gap:1.1rem;list-style:none;margin:0;padding:0;flex-wrap:wrap;font:600 .95rem "Bricolage Grotesque",sans-serif}
+			.nav a{text-decoration:none;color:var(--ink)}
+			.nav a:hover{color:var(--accent)}
+			section{padding:4rem 0;border-bottom:1px solid var(--line)}
+			h2{font-size:clamp(1.8rem,5vw,2.6rem);margin-bottom:1.5rem}
+			#about{display:grid;gap:2rem;align-items:center}
+			@media(min-width:760px){#about{grid-template-columns:1.6fr 1fr}}
+			h1{font-size:clamp(2.6rem,9vw,5.2rem);font-weight:800;letter-spacing:-.03em}
+			h1 span{background:linear-gradient(transparent 62%,var(--mark) 62%)}
+			.role{font:600 1.1rem "Bricolage Grotesque",sans-serif;color:var(--accent);margin:.8rem 0 1.2rem}
+			.mission{border-left:4px solid var(--mark);padding-left:1rem;font-style:italic;margin:1.2rem 0}
+			.photo{width:100%;max-width:21rem;aspect-ratio:4/5;border-radius:1.2rem;overflow:hidden;background:var(--surface);border:1px solid var(--line);justify-self:center}
+			.photo img,.photo svg{width:100%;height:100%;object-fit:cover;display:block}
+			.btn{display:inline-block;padding:.75rem 1.3rem;border-radius:.5rem;font:700 1rem "Bricolage Grotesque",sans-serif;text-decoration:none;border:2px solid var(--ink);color:var(--ink);margin:.3rem .4rem .3rem 0}
+			.btn.primary{background:var(--ink);color:var(--bg)}
+			.btn:hover{background:var(--mark);color:#14262B;border-color:var(--mark)}
+			.grid{display:grid;gap:1.4rem}
+			@media(min-width:760px){.grid.two{grid-template-columns:1fr 1fr}}
+			.proj{background:var(--surface);border:1px solid var(--line);border-radius:.8rem;padding:1.5rem;display:flex;flex-direction:column;gap:.6rem}
+			.proj.cap{border-color:var(--accent);border-width:2px}
+			.proj h3{font-size:1.5rem}
+			.proj dl{margin:0}.proj dt{font:700 .9rem "Bricolage Grotesque",sans-serif;color:var(--accent);margin-top:.5rem}
+			.proj dd{margin:0}
+			.tag{display:inline-block;font:600 .85rem "Bricolage Grotesque",sans-serif;background:var(--bg);border:1px solid var(--line);padding:.15rem .6rem;border-radius:2rem;margin:.15rem .2rem .15rem 0}
+			.badge{align-self:flex-start;background:var(--mark);color:#14262B;font:700 .85rem "Bricolage Grotesque",sans-serif;padding:.15rem .6rem;border-radius:.3rem}
+			.proj .links{margin-top:auto;padding-top:.6rem}
+			.skills{display:grid;gap:1.4rem}
+			@media(min-width:760px){.skills{grid-template-columns:repeat(3,1fr)}}
+			.skills h3{font-size:1.2rem;margin-bottom:.6rem}
+			.skills ul{margin:0;padding-left:1.1rem}
+			.contact-list{list-style:none;padding:0;margin:0;display:grid;gap:.7rem;font:600 1.1rem "Bricolage Grotesque",sans-serif}
+			footer{padding:2rem 0;color:var(--muted);font-size:.95rem}
+</style>
+	</head>
+<body>
+		<header class="nav"><div class="wrap">
+			<b>Jessica Buhler</b>
+			<nav aria-label="Main">
+				<ul>
+					<li><a href="#about">About</a></li>
+					<li><a href="#work">Work</a></li>
+					<li><a href="#skills">Skills</a></li>
+					<li><a href="#contact">Contact</a></li>
+				</ul>
+			</nav></div>
+		</header>
+
+	<main class="wrap">
+<!-- 1. PERSONAL INTRODUCTION -->
+		<section id="about">
+			<div>
+				<h1>Hello, I am</h1>
+				<h1>Jessica Buhler</h1>
+  				<p class="role">Network/IT Professional, graduating December 2026</p>
+  				<p>I am a recent graduate from Fort Hays State University with honors, and I excited for the opportunity to assist others with their technological needs.  The reason that I chose to major in Informatics was to assist others in the manner I can.  For that reason, I have worked in a technical support call center for Nex-Tech, an internet service provider, and as an IT intern for the Theodore Roosevelt Medora Foundation, a non-profit organization from North Dakota.</p>
+				<p>If there is a problem that needs to be solved, I am happy to be of service!</p>
+  				<p class="mission">My mission: To use technology to improve the lives of others, and fix issues that arise.</p>
+  				<a class="btn primary" href="assets/Jessica_Buhler_Resume.pdf" download>Download resume (PDF)</a>
+  				<a class="btn" href="#work">See my work</a>
+		    </div>
+<!-- Replace the SVG below with: <img src="your-photo.jpg" alt="Headshot of Alex Rivera"> -->
+			<div class="photo" role="img" aria-label="Placeholder for professional headshot">
+				<img src="assets/PortfolioImage.jpg" alt="Jessica Buhler">
+		    </div>
+	    </section>
+
+<!-- 3. WORK SAMPLES -->
+		<section id="work">
+			<h2>Selected Projects</h2>
+			<div class="grid two">
+					
+				<article class="proj cap">
+					<span class="badge">Capstone, in progress</span>
+					<h3>Cornerstone SBC Website Refresh</h3>
+					<dl>
+						<dt>Problem</dt><dd>A local church wanted their website refresh as well as their assets documented and remade as needed.&nbsp; &nbsp; &nbsp; &nbsp;</dd>
+						<dt>My role</dt><dd>Solo developer and designer.&nbsp; I am handling the redesign of the assets in Illustrator for higher quality version, I am making a design template for branding, and I have been working with the client to find the website, edit it to his specifications, and document the editing process for the next person. &nbsp;</dd>
+						<dt>Status</dt><dd>The assets are remade and are being stored in a shared google drive.&nbsp; The original webhost has been found too.&nbsp;&nbsp;</dd>
+				    </dl>
+					<div><span class="tag">WordPress</span><span class="tag">HTML/CSS</span><span class="tag">Adobe</span><span class="tag">Office 365</span><span class="tag">Google Drive</span></div>
+					<p class="links"><a href="https://hayscornerstonesbc.com/">Website</a></p>
+			    </article>
+					
+				<article class="proj cap">
+					<span class="badge">Capstone, in progress</span>
+				  <h3>Beacon Quiz Generator</h3>
+					<dl>
+						<dt>Problem</dt><dd>Students may need more practice before taking tests, and such tools may not prepare them for their classes.&nbsp; This will parse their books for questions, then make a quiz from those exact questions with sources.&nbsp;</dd>
+						<dt>My role</dt><dd>Solo developer. I am handling the design, front end, and back end parsing.&nbsp;</dd>
+						<dt>Status</dt>
+						<dd>Page parsing works for common document types, and the questions get parsed into the SQLite database.&nbsp;</dd>
+				    </dl>
+					<div><span class="tag">Python&nbsp;</span><span class="tag">SQLite</span></div>
+					<p class="links"><a href="">Source code (WIP)</a></p>
+			  </article>
+					
+			  <article class="proj">
+					<h3>Python Final: Recursive Maze Generator</h3>
+					<dl>
+						<dt>Problem</dt><dd>For my python, final, I wanted to show how recursion could be used to generate procedural patterns.</dd>
+						<dt>My role</dt><dd>Back-end developer on a team of three. I built the route data API and wrote the tests.</dd>
+						<dt>Result</dt><dd>Delivered a fully functioning video game showcasing recursive maze generation from scratch in the span of three days, from asset creation, coding, and QA testing.&nbsp; &nbsp; &nbsp; &nbsp;</dd>
+				    </dl>
+					<div><span class="tag">Python</span></div>
+					<p class="links"><a href="">Source code (WIP)</a></p>
+				</article>
+					
+				<article class="proj">
+					<h3>Eyegore's Website Refresh</h3>
+					<dl>
+						<dt>Problem</dt><dd>A small business named Eyegores in Cawker City wanted their website to be redesigned to be a bit more aesthetically pleasing.&nbsp;</dd>
+						<dt>My role</dt><dd>Solo developer. I altered the colors to align better with the branding and I reworked the order of information.&nbsp; I was given only a couple of hours and while it is better, there were more ideas I had for it.&nbsp; </dd>
+						<dt>Result</dt><dd>Delivered a web design that is easier on the eyes and more on brand for the business in the allotted time of a couple  hours.</dd>
+				    </dl>
+					<div><span class="tag">HTML/CSS</span></div>
+					<p class="links"><a href="https://web.archive.org/web/20250321043749/https://www.eyegores.com/">Website</a></p>
+			    </article>
+		  </div>
+	  </section>
+
+<!-- 5. SKILLS & CREDENTIALS -->
+		<section id="skills">
+			<h2>Skills and Credentials</h2>
+			<div class="skills">
+				<div><h3>Hardware and Software</h3>
+					<ul><li>Cisco CLI, Cisco Meraki</li>
+					  <li>SOHO Routers, Calix Routers</li>
+					  <li>Windows, Linux</li>
+					  <li>Hyper-V, VMWare, <br>VirtualBox, Proxmox</li>
+					  <li>Adobe Suite, Microsoft Suite</li>
+					  <li>GitHub</li>
+			  </ul></div>
+				<div><h3>Certifications and References</h3>
+				  <ul><li>Cisco Certified Support Technician - Networking (2023)</li>
+					<li>Cisco Certified Network Administrator&nbsp; (in progress)</li>
+					<li>References: Dr. Kevin Amidon, Honors College Director, and Dr. Kevin Shaffe , Informatics Interim Chair. <br>Contact details available on request.</li>
+			  </ul></div>
+			  <div><h3>Languages</h3><ul>
+					<li>Python</li>
+					<li>HTML and CSS</li>
+					<li>SQL (in progress)</li>
+					</ul></div>
+		    </div>
+	    </section>
+
+<!-- CONTACT -->
+	  <section id="contact" style="border-bottom:0">
+		  <h2>Contacts</h2>
+		  <p>I'm looking for entry-level information technology roles.&nbsp; If my experiences seem interesting, feel free to reach out.&nbsp;</p>
+		  <ul class="contact-list">
+			  <li><a href="mailto:jessabuhler@gmail.com">E-Mail: jessabuhler@gmail.com</a></li>
+			  <li><a href="tel:+17856272086">Phone: (785) 627-2086</a></li>
+			  <li><a href="https://www.google.com/maps/place/1585+P+Rd,+Morland,+KS+67650/@39.348951,-100.0554015,706m/" rel="noopener">Permanent Address: <br>(I will be able to move on my own expense)<br>1585 P Rd <br>Morland, KS 67650 </a></li>
+		  </ul>
+	  </section>
+    </main>
+<footer><div class="wrap">© 2026 Jessica Buhler.</div></footer>
+	</body>
+</html>
